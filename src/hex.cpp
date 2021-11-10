@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include <string>
 #include "hex.hpp"
 
@@ -29,7 +30,7 @@ uint8_t hex_digit_to_bin(char hex) {
     } else if (hex >= 'a' && hex <= 'f') {
         return hex - 'a' + 10;
     } else {
-        throw domain_error("Invalid hex digit");
+        throw std::domain_error("Invalid hex digit");
     }
 }
 
@@ -38,7 +39,7 @@ Data hex_to_data(const string& hex) {
 
     auto len = hex.length();
     if(len % 2 != 0) {
-        throw domain_error("Hex string must have even number of characters.");
+        throw std::domain_error("Hex string must have even number of characters.");
     }
     auto count = len / 2;
     result.reserve(count);
