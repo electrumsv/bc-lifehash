@@ -13,7 +13,7 @@ bindir = @bindir@
 srcdir = @srcdir@
 VPATH = @srcdir@
 
-COMPILER = g++
+CXX = @CXX@
 
 libname = liblifehash.a
 
