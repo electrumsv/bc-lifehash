@@ -1,6 +1,7 @@
 #include "gradients.hpp"
 
 #include <algorithm>
+#include <stdexcept>
 
 #include "color.hpp"
 #include "hsb-color.hpp"

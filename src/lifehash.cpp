@@ -267,6 +267,10 @@ LifeHashImage* lifehash_make_from_digest(const uint8_t* digest, LifeHashVersion 
     return lifehash_make_image(LifeHash::make_from_digest(std::vector<uint8_t>(digest, digest + 32), static_cast<LifeHash::Version>(version), module_size, has_alpha));
 }
 
+#ifdef _MSC_VER
+#pragma warning(disable : 4996)
+#endif
+
 EMSCRIPTEN_KEEPALIVE
 char* lifehash_data_to_hex(const uint8_t* data, size_t len) {
     auto d = LifeHash::Data(data, data + len);
