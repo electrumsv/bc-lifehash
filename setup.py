@@ -1,4 +1,14 @@
+import platform
 from setuptools import Extension, setup
+import sysconfig
+
+base_compile_args = sysconfig.get_config_var('CFLAGS')
+if base_compile_args is None:
+    base_compile_args = ""
+extra_compile_args = base_compile_args.split()
+
+if platform.system() == "Darwin":
+    extra_compile_args += ["-std=c++11"]
 
 setup(
     ext_modules=[
@@ -22,6 +32,8 @@ setup(
                 "src/sha256.cpp",
                 "src/lifehash-python.cpp",
             ],
+            extra_compile_args=extra_compile_args,
+            language="c++11",
         ),
     ]
 )
