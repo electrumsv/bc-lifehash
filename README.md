@@ -1,5 +1,7 @@
 # bc-lifehash - The C++/C Implementation
 
+This is the ElectrumSV fork for import providing Python extension modules for Linux, MacOS and Windows (ideally!).
+
 🟨🟨🟨🟨🟨<br/>
 🟨🟨🟥🟨🟨<br/>
 🟨🟨🟨🟥🟨<br/>
